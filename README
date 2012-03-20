@@ -1,0 +1,1 @@
+Prototype for a distributed locking library using Redis as a locking server.
