@@ -34,7 +34,7 @@ sub lock {
     $self->redis->multi;
     $self->redis->setnx($self->key => $self->value);
     $self->redis->expire($self->key => 10);
-    unless ($self->exec) {
+    unless ($self->redis->exec) {
         return;
     }
 
